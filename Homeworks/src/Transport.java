@@ -27,6 +27,7 @@ public abstract class Transport <T extends DriverBase> implements Racer {
 
     public abstract void startMove();
     public abstract void stopMove();
+    public abstract void printType();
 
         public String getBrand () {
             return brand;

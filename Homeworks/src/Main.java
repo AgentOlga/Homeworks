@@ -9,25 +9,26 @@ public class Main {
 
             Car car = new Car("Brand" ,
                     "Model" ,
-                    2.6, driverB);
+                    2.6, driverB, BodyType.Coupe);
 
             DriverD driverD = new DriverD("Водитель категории D",
                     true, 1);
 
             Bus bus = new Bus("Brand" ,
                     "Model" ,
-                    2.6, driverD);
+                    2.6, driverD, Capacity.LARGE);
             DriverC driverC = new DriverC("Водитель категории C",
                     true, 5);
 
             Truck truck = new Truck("Brand" ,
                     "Model" ,
-                    7.6, driverC);
+                    7.6, driverC, BearingCapacity.N2);
 
 
             printInfo(car);
             printInfo(bus);
             printInfo(truck);
+
         }
     }
 
