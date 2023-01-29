@@ -1,4 +1,6 @@
 import Driver.*;
+import Exception.*;
+import jdk.jfr.StackTrace;
 
 public class Main {
 
@@ -29,9 +31,15 @@ public class Main {
             printInfo(bus);
             printInfo(truck);
 
+            try {
+                car.diagnostics();
+            }
+            catch(PassDiagnosticsException e) {
+                e.printStackTrace();
+            }
+
         }
     }
-
 
     public static void printInfo(Transport<?> transport) {
         System.out.println(" " + transport.getDriver().getName() + " управляет автомобилем " + transport.getBrand() + " " + transport.getModel() + " и будет участвовать в заезде.");

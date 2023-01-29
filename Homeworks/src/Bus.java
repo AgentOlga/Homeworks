@@ -1,4 +1,5 @@
 import Driver.DriverD;
+import Exception.*;
 
 public class Bus extends Transport<DriverD> {
     private Capacity capacity;
@@ -43,6 +44,11 @@ public class Bus extends Transport<DriverD> {
         System.out.println("Максимальная скорость автобуса " + maxSpeed);
     }
 
+
+    @Override
+    public  boolean diagnostics () throws PassDiagnosticsException {
+        return false;
+    }
     public Capacity getCapacity() {
         return capacity;
     }

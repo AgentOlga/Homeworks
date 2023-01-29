@@ -1,6 +1,7 @@
 import Driver.*;
+import Exception.*;
 
-public class Truck extends Transport <DriverC> {
+public class Truck extends Transport<DriverC> {
         private BearingCapacity bearingCapacity;
          public Truck (String brand, String model, double engineVolume, DriverC driver, BearingCapacity bearingCapacity) {
              super(brand, model, engineVolume, driver);
@@ -45,6 +46,15 @@ public class Truck extends Transport <DriverC> {
         int maxBound = 140;
         int maxSpeed = (int) (minBound + (maxBound - minBound) * Math.random());
         System.out.println("Максимальная скорость грузовика " + maxSpeed);
+    }
+
+    @Override
+    public boolean diagnostics() throws PassDiagnosticsException {
+        if ((getDriver() != null && getDriver().isHasDriversLicense())) {
+            return true;
+        } else {
+            throw new PassDiagnosticsException("\"Необходимо указать тип прав!");
+        }
     }
 
     public BearingCapacity getBearingCapacity() {

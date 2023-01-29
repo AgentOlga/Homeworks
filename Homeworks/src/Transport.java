@@ -1,4 +1,5 @@
 import Driver.*;
+import Exception.PassDiagnosticsException;
 
 public abstract class Transport <T extends DriverBase> implements Racer {
     private final String brand;
@@ -28,6 +29,7 @@ public abstract class Transport <T extends DriverBase> implements Racer {
     public abstract void startMove();
     public abstract void stopMove();
     public abstract void printType();
+    public abstract boolean diagnostics() throws PassDiagnosticsException;
 
         public String getBrand () {
             return brand;
