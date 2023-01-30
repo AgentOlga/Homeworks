@@ -38,4 +38,8 @@ public abstract class DriverBase {
     public abstract void stopMove();
     public abstract void refill();
 
+    @Override
+    public String toString() {
+        return "Водитель"  + name ;
+    }
 }
