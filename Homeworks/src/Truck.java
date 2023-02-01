@@ -53,7 +53,7 @@ public class Truck extends Transport<DriverC> {
         if ((getDriver() != null && getDriver().isHasDriversLicense())) {
             return true;
         } else {
-            throw new PassDiagnosticsException("\"Необходимо указать тип прав!");
+            throw new PassDiagnosticsException("Необходимо указать тип прав!");
         }
     }
 

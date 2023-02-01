@@ -1,6 +1,7 @@
 import java.util.ArrayDeque;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import Exception.*;
 
 public class CarService {
     private final Queue<Transport<?>> transportQueue = new ArrayDeque<>();
@@ -15,8 +16,16 @@ public class CarService {
 
     public void runCarService() {
         Transport<?> transport = transportQueue.poll();
-        if (transport != null);
-        }
+        if (transport != null){
+            try {
+                transport.diagnostics();
+                transport.getMechanics().iterator().next().maintenance();
+
+            } catch (PassDiagnosticsException e) {
+                System.out.println("Ошибка при проведении ТО" + transport);
+            }
         }
     }
+}
+
 

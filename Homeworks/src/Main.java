@@ -2,8 +2,7 @@ import Driver.*;
 import Exception.*;
 import jdk.jfr.StackTrace;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -76,7 +75,7 @@ public class Main {
 
 
         for (Transport<?> transport : racers) {
-            System.out.println(transport +" " + transport.getDriver() + transport.getMechanics());
+            System.out.println(transport + " " + transport.getDriver() + transport.getMechanics());
         }
 
         CarService carService = new CarService();
@@ -87,12 +86,22 @@ public class Main {
         carService.runCarService();
         carService.runCarService();
         carService.runCarService();
+
+
+        Map < Transport<?>, Mechanic> transportMechanicMap = new HashMap<>();
+        for (Transport<?> racer : racers) {
+            Set<Mechanic> mechanics = racer.getMechanics();
+            while (mechanics.iterator().hasNext()) {
+                transportMechanicMap.put(racer, mechanics.iterator().next());
+            }
+        }
     }
 
-    public static void printInfo(Transport<?> transport) {
-        System.out.println(" " + transport.getDriver().getName() + " управляет автомобилем " + transport.getBrand() + " " + transport.getModel() + " и будет участвовать в заезде.");
+        public static void printInfo (Transport < ? > transport){
+            System.out.println(" " + transport.getDriver().getName() + " управляет автомобилем " + transport.getBrand() + " " + transport.getModel() + " и будет участвовать в заезде.");
+        }
     }
-}
+
 
 
 

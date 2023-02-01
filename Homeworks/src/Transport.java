@@ -1,15 +1,15 @@
 import Driver.*;
 import Exception.PassDiagnosticsException;
-
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class Transport <T extends DriverBase> implements Racer {
     private final String brand;
     private final String model;
     double engineVolume;
     private final T driver;
-    private final List<Mechanic> mechanics = new ArrayList<>();
+    private final Set<Mechanic> mechanics = new HashSet<>();
 
     public static final String DEFAULT_VALUE = "default";
     public static final double DEFAULT_ENGINE_VOLUME = 1.5;
@@ -57,7 +57,7 @@ public abstract class Transport <T extends DriverBase> implements Racer {
         this.engineVolume = engineVolume;
     }
 
-    public List<Mechanic> getMechanics() {
+    public Set<Mechanic> getMechanics() {
         return mechanics;
     }
     public void addMechanics (Mechanic mechanic) {
