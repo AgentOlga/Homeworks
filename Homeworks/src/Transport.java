@@ -61,7 +61,7 @@ public abstract class Transport <T extends DriverBase> implements Racer {
         return mechanics;
     }
     public void addMechanics (Mechanic mechanic) {
-            mechanic.add(mechanic);
+        mechanics.add(mechanic);
 
     }
 

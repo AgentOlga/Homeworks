@@ -54,9 +54,9 @@ public class Main {
         Mechanic mechanic4 = new Mechanic("Boris Jonson", "Drive and Life", TransportType.TRUCK);
         Mechanic mechanic5 = new Mechanic("Ivan Ivailo", "Berezka", TransportType.BUS);
 
-        car.addMechanic(mechanic1);
-        car.addMechanic(mechanic2);
-        car.addMechanic(mechanic3);
+        car.addMechanics(mechanic1);
+        car.addMechanics(mechanic2);
+        car.addMechanics(mechanic3);
 
         Bus bus = new Bus("Mercedes", "HG%", 34.5, new DriverD("Водитель категории C", true, 5), Capacity.EXTRA_SMALL);
         bus.addMechanics(mechanic1);
@@ -90,11 +90,11 @@ public class Main {
 
         Map < Transport<?>, Mechanic> transportMechanicMap = new HashMap<>();
         for (Transport<?> racer : racers) {
-            Set<Mechanic> mechanics = racer.getMechanics();
-            while (mechanics.iterator().hasNext()) {
-                transportMechanicMap.put(racer, mechanics.iterator().next());
+            for(Mechanic mechanic : racer.getMechanics()){
+                transportMechanicMap.put(racer, mechanic);
             }
         }
+        System.out.println(transportMechanicMap);
     }
 
         public static void printInfo (Transport < ? > transport){

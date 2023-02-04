@@ -19,8 +19,10 @@ public class CarService {
         if (transport != null){
             try {
                 transport.diagnostics();
-                transport.getMechanics().iterator().next().maintenance();
-
+                var iterator = transport.getMechanics().iterator();
+                while (iterator.hasNext()) {
+                    iterator.next().maintenance();
+                }
             } catch (PassDiagnosticsException e) {
                 System.out.println("Ошибка при проведении ТО" + transport);
             }
