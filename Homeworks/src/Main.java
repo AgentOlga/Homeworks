@@ -54,9 +54,9 @@ public class Main {
         Mechanic mechanic4 = new Mechanic("Boris Jonson", "Drive and Life", TransportType.TRUCK);
         Mechanic mechanic5 = new Mechanic("Ivan Ivailo", "Berezka", TransportType.BUS);
 
-        car.addMechanics(mechanic1);
-        car.addMechanics(mechanic2);
-        car.addMechanics(mechanic3);
+  //      car.addMechanics(mechanic1);
+  //      car.addMechanics(mechanic2);
+  //        car.addMechanics(mechanic3);
 
         Bus bus = new Bus("Mercedes", "HG%", 34.5, new DriverD("Водитель категории C", true, 5), Capacity.EXTRA_SMALL);
         bus.addMechanics(mechanic1);
