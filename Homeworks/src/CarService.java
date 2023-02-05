@@ -8,7 +8,7 @@ public class CarService {
 
     public void addTransport(Transport<?> transport) {
         if (transport instanceof Bus) {
-            System.out.println("автобусы не нуждаются в техобслуживании перед заездом");
+            System.out.println("автобусы не нуждаются в техобслуживании перед заездом.");
         } else {
             transportQueue.add(transport);
         }

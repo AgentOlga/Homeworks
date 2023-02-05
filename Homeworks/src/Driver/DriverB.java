@@ -16,7 +16,7 @@ public class DriverB extends DriverBase {
 
     @Override
     public void stopMove() {
-        out.println(" Водитель категории B " + getName() + " становился");
+        out.println(" Водитель категории B " + getName() + " oстановился");
     }
 
     @Override

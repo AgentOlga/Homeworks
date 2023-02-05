@@ -40,6 +40,6 @@ public abstract class DriverBase {
 
     @Override
     public String toString() {
-        return "Водитель"  + name ;
+        return "Водитель "  + name ;
     }
 }
