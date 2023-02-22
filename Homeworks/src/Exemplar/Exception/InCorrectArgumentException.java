@@ -5,7 +5,6 @@ package Exemplar.Exception;
  */
 public class InCorrectArgumentException  extends Exception {
     private final String argument;
-    public String getMessage;
 
     public InCorrectArgumentException(String argument) {
         this.argument = argument;

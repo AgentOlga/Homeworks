@@ -27,34 +27,15 @@ public class TaskService {
             throw new TaskNotFoundException(taskId);
         }
     }
-    public Collection<Task> getAllByDate(LocalDate date) {
-        Collection<Task> tasksByDay = new ArrayList<>();
+    public Collection<Task> getTasksByDate(LocalDate inputDate) {
         Collection<Task> allTasks = taskMap.values();
-
+        Collection<Task> result = new ArrayList<>();
         for (Task task : allTasks) {
-            LocalDateTime currentDateTime = task.getTaskTime();
-
-
-            if (currentDateTime.toLocalDate().equals(date)) {
-                tasksByDay.add(task);
-                break;
-            }
-
-            LocalDateTime taskNextTime = currentDateTime;
-
-            do {
-                taskNextTime = task.getTaskTime();
-                if (taskNextTime == null) {
-                  break;
-                }
-                if (taskNextTime.toLocalDate().equals(date)) {
-                  tasksByDay.add(task);
-                  break;
-                }
-
-            } while (taskNextTime.toLocalDate().isBefore(date));
+            LocalDateTime taskDateTime = task.getTaskTime();
+            if (taskDateTime.toLocalDate().equals(inputDate))
+                result.add(task);
         }
-        return tasksByDay;
+        return result;
     }
 }
 
