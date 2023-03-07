@@ -27,6 +27,7 @@ public class TaskService {
             throw new TaskNotFoundException(taskId);
         }
     }
+
     public Collection<Task> getTasksByDate(LocalDate inputDate) {
         Collection<Task> allTasks = taskMap.values();
         Collection<Task> result = new ArrayList<>();

@@ -2,6 +2,7 @@ package Exemplar;
 
 import Exemplar.Exception.InCorrectArgumentException;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
@@ -13,8 +14,9 @@ public class YearlyTask extends Task{
         super(title, description, type, taskTime);
     }
 
+
     @Override
-    public LocalDateTime getTaskNextTime(LocalDateTime dateTime) {
+    public LocalDate getTaskNextTime(LocalDate dateTime) {
         return dateTime.plusYears(1);
     }
 }
