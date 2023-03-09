@@ -33,8 +33,21 @@ public class TaskService {
         Collection<Task> result = new ArrayList<>();
         for (Task task : allTasks) {
             LocalDateTime taskDateTime = task.getTaskTime();
-            if (taskDateTime.toLocalDate().equals(inputDate))
+            if (taskDateTime.toLocalDate().equals(inputDate)) {
                 result.add(task);
+                break;
+            }
+
+            do {
+                taskDateTime = task.getTaskNextTime(taskDateTime);
+                if (taskDateTime == null) {
+                    break;
+                }
+                if (taskDateTime.toLocalDate().equals(inputDate)) {
+                    result.add(task);
+                    break;
+                }
+            } while (taskDateTime.toLocalDate().isBefore(inputDate));
         }
         return result;
     }

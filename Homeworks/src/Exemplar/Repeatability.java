@@ -1,7 +1,8 @@
 package Exemplar;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public interface Repeatability {
-    LocalDate getTaskNextTime (LocalDate dateTime);
+    LocalDateTime getTaskNextTime (LocalDateTime dateTime);
 }

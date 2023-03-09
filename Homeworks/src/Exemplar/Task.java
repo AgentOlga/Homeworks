@@ -94,11 +94,11 @@ public abstract class Task implements Repeatability {
     @Override
     public String toString() {
         return "Задача {" +
-                "id=" + id +
-                ", Заголовок'" + title + '\'' +
-                ", Описание" + description + '\'' +
-                ", Тип " + type +
-                ", Время" + taskTime +
+                "id= " + id +
+                ", Заголовок '" + title + '\'' +
+                ", Описание    " + description + '\'' +
+                ",  Тип  " + type +
+                ",  Время   " + taskTime +
                 '}';
     }
 }
